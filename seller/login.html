@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login admin penjual | MauKue</title>
+  <meta name="description" content="Login admin MauKue untuk mengelola produk, pesanan, jadwal produksi, dan pembayaran DP.">
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/customer.css">
+  <link rel="stylesheet" href="../css/seller.css">
+</head>
+<body class="auth-body" data-page="seller-login" data-root="..">
+  <main class="auth-shell">
+    <section class="auth-visual auth-visual-admin">
+      <a class="brand auth-brand" href="../index.html">mau<span>kue</span></a>
+      <div class="auth-visual-copy">
+        <span class="eyebrow">Admin / Penjual</span>
+        <h1>Seller Studio.</h1>
+        <p>Kelola katalog, pesanan masuk, jadwal produksi, pelanggan, dan pembayaran DP dari satu dashboard admin.</p>
+        <div class="auth-quote">
+          <span class="quote-mark">“</span>
+          <p>Setiap kue yang keluar dari dapur dimulai dari pesanan yang rapi.</p>
+          <small>MauKue seller note</small>
+        </div>
+      </div>
+      <div class="auth-visual-foot">
+        <span>Kelola produk</span><span>Pesanan &amp; DP</span><span>Jadwal produksi</span>
+      </div>
+    </section>
+
+    <section class="auth-panel">
+      <div class="auth-card">
+        <a class="auth-back" href="../index.html">← Kembali ke beranda</a>
+        <span class="area-badge">Area admin</span>
+        <span class="eyebrow">Khusus penjual</span>
+        <h2>Masuk ke Seller Studio</h2>
+        <p class="auth-sub">Halaman ini hanya untuk admin/penjual. Akun pembeli tidak dapat masuk di sini.</p>
+
+        <div class="session-notice" id="session-notice" hidden></div>
+
+        <form id="login-form" class="auth-form" novalidate>
+          <div class="field">
+            <label for="login-username">Username penjual</label>
+            <input id="login-username" name="username" autocomplete="username" required placeholder="Username admin">
+            <small class="field-hint" id="username-hint">Username penjual demo: Khalida</small>
+          </div>
+          <div class="field">
+            <label for="login-password">Password</label>
+            <input id="login-password" name="password" type="password" autocomplete="current-password" required placeholder="Password">
+          </div>
+          <div class="form-error" id="login-error" role="alert"></div>
+          <button class="btn btn-block" id="login-submit" type="submit">Masuk ke dashboard admin</button>
+        </form>
+
+        <div class="demo-card" id="seller-demo">
+          <strong>Akun demo penjual</strong>
+          <span>Username <code>Khalida</code> · Password <code>aktivasicreativehub</code></span>
+          <small>Hanya untuk pengujian lokal. Jangan gunakan kredensial produksi di frontend.</small>
+        </div>
+
+        <div class="area-switch">
+          <span>Bukan penjual?</span>
+          <a class="text-link" href="../login.html">Masuk sebagai pembeli →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/products.js"></script>
+  <script src="../js/database.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/orders.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

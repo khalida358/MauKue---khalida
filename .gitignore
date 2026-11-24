@@ -1,0 +1,4 @@
+# Local tooling and generated deployment artifacts
+.wrangler/
+deploy/.wrangler/
+dist/

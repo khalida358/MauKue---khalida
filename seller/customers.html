@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pelanggan | MauKue Seller</title>
+  <meta name="description" content="Daftar pelanggan dan riwayat belanja MauKue.">
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/seller.css">
+</head>
+<body data-page="seller-customers" data-root=".." class="seller-body">
+  <div class="seller-layout">
+    <aside id="seller-sidebar" class="seller-sidebar"></aside>
+    <div class="seller-main">
+      <header id="seller-topbar" class="seller-topbar"></header>
+      <main class="seller-content">
+        <div class="dash-page-head">
+          <div><span class="eyebrow">Relasi pelanggan</span><h1>Pelanggan</h1><p>Lihat pelanggan terdaftar, jumlah pesanan, nilai belanja, dan kontak WhatsApp.</p></div>
+          <div class="search-field compact-search"><span aria-hidden="true">⌕</span><input id="customer-search" type="search" placeholder="Cari nama, username, telepon..." aria-label="Cari pelanggan"></div>
+        </div>
+        <section class="panel panel-table" id="customers-root"></section>
+      </main>
+      <footer class="seller-footer"><span>MauKue Seller Studio</span><span>Data demo tersimpan di browser</span></footer>
+    </div>
+  </div>
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/products.js"></script>
+  <script src="../js/database.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/orders.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/seller.js"></script>
+</body>
+</html>

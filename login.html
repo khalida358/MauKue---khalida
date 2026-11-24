@@ -1,1 +1,70 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Login | MauKue</title><link rel="stylesheet" href="css/style.css"><script src="js/products.js"></script><script src="js/app.js"></script></head><body><header class="top"><a class="brand" href="../index.html">mau<span>kue</span></a><nav class="nav"><a href="../customer/dashboard.html">Beranda</a><a href="../customer/catalog.html">Katalog</a><a href="../customer/custom-order.html">Pesan custom</a><a href="../customer/orders.html">Pesanan</a><a href="../seller/dashboard.html">Area penjual</a></nav><a class="btn" href="../customer/cart.html">Keranjang</a></header><main class="shell page"><div style="max-width:480px;margin:35px auto"><div class="panel"><div class="eyebrow">Selamat datang</div><h1>Masuk ke MauKue</h1><form onsubmit="login(event)"><div class="field"><label>Nama pengguna</label><input id="username" required placeholder="Nama pengguna"></div><div class="field"><label>Password</label><input id="password" type="password" required placeholder="Password"></div><button class="btn">Masuk</button></form><p class="muted" style="margin-top:18px">Pembeli: masukkan nama apa saja. Penjual: gunakan akun demo yang tercantum di README.</p></div></div></main><footer class="shell footer">MauKue · Kue custom sesukamu</footer></body></html>
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Masuk pembeli | MauKue</title>
+  <meta name="description" content="Masuk ke akun pembeli MauKue untuk memesan kue dan memantau pesanan.">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/customer.css">
+</head>
+<body class="auth-body" data-page="login" data-root="">
+  <main class="auth-shell">
+    <section class="auth-visual">
+      <a class="brand auth-brand" href="index.html">mau<span>kue</span></a>
+      <div class="auth-visual-copy">
+        <span class="eyebrow">Area pembeli</span>
+        <h1>Manisnya di setiap momen.</h1>
+        <p>Masuk untuk memesan kue, menyimpan alamat, dan memantau pesananmu. Area ini khusus pembeli—pengelolaan toko ada di login admin terpisah.</p>
+        <div class="auth-quote">
+          <span class="quote-mark">“</span>
+          <p>Kue yang tepat bikin acara biasa terasa istimewa.</p>
+          <small>MauKue kitchen note</small>
+        </div>
+      </div>
+      <div class="auth-visual-foot">
+        <span>Pickup &amp; delivery</span><span>Custom cake</span><span>DP 50%</span>
+      </div>
+    </section>
+
+    <section class="auth-panel">
+      <div class="auth-card">
+        <a class="auth-back" href="index.html">← Kembali ke beranda</a>
+        <span class="eyebrow">Akun pembeli</span>
+        <h2>Masuk ke MauKue</h2>
+        <p class="auth-sub">Gunakan akun pembeli untuk memesan kue dan memantau status pesanan.</p>
+
+        <div class="session-notice" id="session-notice" hidden></div>
+
+        <form id="login-form" class="auth-form" novalidate>
+          <div class="field">
+            <label for="login-username">Username</label>
+            <input id="login-username" name="username" autocomplete="username" required placeholder="Username pembeli">
+            <small class="field-hint" id="username-hint">Masukkan username akun pembeli kamu.</small>
+          </div>
+          <div class="field">
+            <label for="login-password">Password</label>
+            <input id="login-password" name="password" type="password" autocomplete="current-password" required placeholder="Password">
+          </div>
+          <div class="form-error" id="login-error" role="alert"></div>
+          <button class="btn btn-block" id="login-submit" type="submit">Masuk sebagai pembeli</button>
+        </form>
+
+        <p class="auth-switch">Belum punya akun pembeli? <a class="text-link" href="register.html">Daftar sekarang</a></p>
+        <div class="area-switch">
+          <span>Admin atau penjual?</span>
+          <a class="text-link" href="seller/login.html">Masuk ke area admin →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/utils.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/database.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/orders.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

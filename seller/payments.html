@@ -1,1 +1,36 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pembayaran DP | MauKue</title><link rel="stylesheet" href="../css/style.css"><script src="../js/products.js"></script><script src="../js/app.js"></script></head><body><header class="top"><a class="brand" href="../index.html">mau<span>kue</span></a><nav class="nav"><a href="../customer/dashboard.html">Beranda</a><a href="../customer/catalog.html">Katalog</a><a href="../customer/custom-order.html">Pesan custom</a><a href="../customer/orders.html">Pesanan</a><a href="../seller/dashboard.html">Area penjual</a></nav><a class="btn" href="../customer/cart.html">Keranjang</a></header><main class="shell page"><h1>Pembayaran dan DP</h1><div class="notice">Status DP di versi awal ini dicatat manual. Konfirmasi nominal dan bukti pembayaran langsung dengan pelanggan.</div><div class="panel" style="margin-top:20px"><table class="table"><thead><tr><th>Kode pesanan</th><th>Pelanggan</th><th>Total</th><th>Status pembayaran</th><th>Aksi</th></tr></thead><tbody id="payments"></tbody></table></div><script>function renderPay(){let a=get('orders',[]);document.getElementById('payments').innerHTML=a.length?a.map(o=>`<tr><td>${o.id}</td><td>${o.customer}</td><td>${money(o.total)}</td><td>${o.payment}</td><td><button class="btn ghost" onclick="markPaid('${o.id}')">Tandai DP diterima</button></td></tr>`).join(''):'<tr><td colspan="5" class="empty">Belum ada pembayaran.</td></tr>'}function markPaid(id){let a=get('orders',[]),o=a.find(x=>x.id===id);if(o)o.payment='DP diterima';set('orders',a);renderPay()}renderPay()</script></main><footer class="shell footer">MauKue · Kue custom sesukamu</footer></body></html>
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pembayaran &amp; DP | MauKue Seller</title>
+  <meta name="description" content="Catat DP dan pelunasan pesanan kue MauKue secara manual.">
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/seller.css">
+</head>
+<body data-page="seller-payments" data-root=".." class="seller-body">
+  <div class="seller-layout">
+    <aside id="seller-sidebar" class="seller-sidebar"></aside>
+    <div class="seller-main">
+      <header id="seller-topbar" class="seller-topbar"></header>
+      <main class="seller-content">
+        <div class="dash-page-head">
+          <div><span class="eyebrow">Pencatatan manual</span><h1>Pembayaran &amp; DP</h1><p>Tandai pembayaran setelah kamu benar-benar menerima transfer dari pelanggan.</p></div>
+          <div class="search-field compact-search"><span aria-hidden="true">⌕</span><input id="payment-search" type="search" placeholder="Cari pesanan / pelanggan" aria-label="Cari pembayaran"></div>
+        </div>
+        <div id="payments-root"></div>
+      </main>
+      <footer class="seller-footer"><span>MauKue Seller Studio</span><span>Data demo tersimpan di browser</span></footer>
+    </div>
+  </div>
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/products.js"></script>
+  <script src="../js/database.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/orders.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/seller.js"></script>
+</body>
+</html>

@@ -1,1 +1,137 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pesan Kue Custom | MauKue</title><link rel="stylesheet" href="../css/style.css"><script src="../js/products.js"></script><script src="../js/app.js"></script></head><body><header class="top"><a class="brand" href="../index.html">mau<span>kue</span></a><nav class="nav"><a href="../customer/dashboard.html">Beranda</a><a href="../customer/catalog.html">Katalog</a><a href="../customer/custom-order.html">Pesan custom</a><a href="../customer/orders.html">Pesanan</a><a href="../seller/dashboard.html">Area penjual</a></nav><a class="btn" href="../customer/cart.html">Keranjang</a></header><main class="shell page"><div class="section-title"><div><div class="eyebrow">Buat sesuai keinginanmu</div><h1>Form Pesanan Custom</h1></div></div><form class="panel" onsubmit="submitOrder(event)"><input type="hidden" name="custom" value="yes"><div class="form-grid"><div class="field"><label>Nama</label><input name="name" required></div><div class="field"><label>Nomor WhatsApp</label><input name="phone" required></div><div class="field"><label>Ukuran kue</label><select name="size"><option>Mini</option><option>Regular</option><option>Jumbo</option><option>2 tingkat</option><option>3 tingkat</option></select></div><div class="field"><label>Rasa</label><select name="flavor"><option>Vanilla</option><option>Cokelat</option><option>Red Velvet</option><option>Matcha</option></select></div><div class="field"><label>Warna utama</label><input name="color" placeholder="Contoh: butter yellow dan putih"></div><div class="field"><label>Perkiraan budget (Rp)</label><input name="budget" type="number" min="0" required></div><div class="field"><label>Tanggal dibutuhkan</label><input name="date" type="date" required></div><div class="field"><label>Waktu</label><input name="time" type="time" required></div></div><div class="field"><label>Desain, tulisan, dekorasi, dan catatan</label><textarea name="notes" placeholder="Ceritakan kue yang kamu inginkan..."></textarea></div><div class="field"><label>Referensi foto (belum tersimpan ke server pada versi ini)</label><input type="file" accept="image/*"></div><div class="field"><label>Pengambilan / pengantaran</label><select name="method"><option>Ambil di toko</option><option>Diantar</option></select></div><div class="field"><label>Alamat jika diantar</label><input name="address"></div><button class="btn">Kirim pesanan custom</button></form></main><footer class="shell footer">MauKue · Kue custom sesukamu</footer></body></html>
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pesan kue custom | MauKue</title>
+  <meta name="description" content="Rancang kue custom MauKue: ukuran, rasa, warna, tema, dekorasi, tulisan, dan referensi desain.">
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/customer.css">
+</head>
+<body data-page="customer-custom" data-root="..">
+  <header id="site-header" class="site-header"></header>
+
+  <main class="page-shell">
+    <div class="shell">
+      <div class="page-head">
+        <div>
+          <span class="eyebrow">Bikin kue versimu</span>
+          <h1>Pesan kue custom</h1>
+          <p>Ceritakan desain yang kamu bayangkan. Harga yang muncul adalah estimasi; penjual akan mengonfirmasi harga final setelah memeriksa detail dan referensi.</p>
+        </div>
+        <a class="btn btn-ghost" href="catalog.html">Lihat katalog</a>
+      </div>
+
+      <div class="custom-layout">
+        <form class="custom-form" id="custom-form" novalidate>
+          <section class="panel form-section">
+            <div class="panel-head"><h2>Detail kue</h2><span>01</span></div>
+            <div class="form-grid">
+              <div class="field">
+                <label for="custom-size">Ukuran kue</label>
+                <select id="custom-size" name="size" required></select>
+              </div>
+              <div class="field">
+                <label for="custom-flavor">Rasa</label>
+                <select id="custom-flavor" name="flavor" required></select>
+              </div>
+              <div class="field">
+                <label for="custom-layers">Jumlah tingkat</label>
+                <select id="custom-layers" name="layers" required></select>
+              </div>
+              <div class="field">
+                <label for="custom-decoration">Jenis dekorasi</label>
+                <select id="custom-decoration" name="decoration" required></select>
+              </div>
+              <div class="field">
+                <label for="custom-theme">Tema desain</label>
+                <select id="custom-theme" name="theme" required></select>
+              </div>
+              <div class="field">
+                <label for="custom-cake-text">Tulisan pada kue</label>
+                <input id="custom-cake-text" name="cakeText" placeholder="Contoh: Happy Birthday, Mia!">
+              </div>
+            </div>
+            <div class="form-grid color-grid">
+              <div class="field color-field">
+                <label for="custom-primary">Warna utama</label>
+                <div class="color-input"><input id="custom-primary" name="primaryColor" type="color" value="#ffd85e"><span>Butter yellow</span></div>
+              </div>
+              <div class="field color-field">
+                <label for="custom-secondary">Warna tambahan</label>
+                <div class="color-input"><input id="custom-secondary" name="secondaryColor" type="color" value="#a9dce9"><span>Light blue</span></div>
+              </div>
+            </div>
+            <div class="field">
+              <label for="custom-notes">Catatan tambahan</label>
+              <textarea id="custom-notes" name="notes" rows="3" placeholder="Karakter, bunga, lilin, tekstur, atau detail lain yang kamu inginkan..."></textarea>
+            </div>
+          </section>
+
+          <section class="panel form-section">
+            <div class="panel-head"><h2>Jadwal &amp; referensi</h2><span>02</span></div>
+            <div class="form-grid">
+              <div class="field">
+                <label for="custom-date">Tanggal dibutuhkan</label>
+                <input id="custom-date" name="date" type="date" required>
+              </div>
+              <div class="field">
+                <label for="custom-time">Waktu pengambilan / pengiriman</label>
+                <select id="custom-time" name="time" required></select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Foto referensi desain <span class="optional">(opsional)</span></label>
+              <input id="custom-reference" type="file" accept="image/jpeg,image/png,image/webp" hidden>
+              <label class="upload-box" for="custom-reference">
+                <span class="upload-icon">＋</span>
+                <strong>Pilih gambar referensi</strong>
+                <small>JPG, PNG, atau WebP · maksimal 3 MB</small>
+              </label>
+              <div class="reference-preview" id="reference-preview" hidden>
+                <img id="reference-image" alt="Preview referensi desain">
+                <div><strong id="reference-name">referensi.jpg</strong><small>Gambar disimpan di browser ini.</small></div>
+                <button class="icon-button danger" id="remove-reference" type="button" aria-label="Hapus referensi">×</button>
+              </div>
+            </div>
+
+            <div class="alert alert-soft">Referensi hanya tersimpan di browser untuk MVP ini. Penjual melihat gambar yang sama saat membuka detail pesanan.</div>
+          </section>
+
+          <div class="form-error" id="custom-error" role="alert"></div>
+          <div class="custom-submit">
+            <div class="custom-estimate"><small>Estimasi harga</small><strong id="custom-estimate">Rp0</strong></div>
+            <div class="custom-submit-actions">
+              <button class="btn btn-ghost" type="submit">Tambah ke keranjang</button>
+              <button class="btn" type="button" id="custom-checkout">Lanjut ke checkout →</button>
+            </div>
+          </div>
+        </form>
+
+        <aside class="custom-side">
+          <div class="panel sticky-panel">
+            <div class="panel-head"><h2>Ringkasan desain</h2><span>Live</span></div>
+            <div id="custom-summary"></div>
+            <div class="dp-note">
+              <span class="dp-icon">i</span>
+              <div><strong>Harga final menunggu penjual</strong><span>Estimasi dihitung dari ukuran, tingkat, dekorasi, dan tulisan. Penjual dapat menyesuaikan setelah review.</span></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/products.js"></script>
+  <script src="../js/database.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/orders.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/customer.js"></script>
+</body>
+</html>

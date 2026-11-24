@@ -1,1 +1,52 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kelola Produk | MauKue</title><link rel="stylesheet" href="../css/style.css"><script src="../js/products.js"></script><script src="../js/app.js"></script></head><body><header class="top"><a class="brand" href="../index.html">mau<span>kue</span></a><nav class="nav"><a href="../customer/dashboard.html">Beranda</a><a href="../customer/catalog.html">Katalog</a><a href="../customer/custom-order.html">Pesan custom</a><a href="../customer/orders.html">Pesanan</a><a href="../seller/dashboard.html">Area penjual</a></nav><a class="btn" href="../customer/cart.html">Keranjang</a></header><main class="shell page"><div class="section-title"><h1>Kelola Produk</h1><span class="badge">Katalog aktif</span></div><p class="muted">Produk dan foto berasal dari katalog MauKue yang sudah ada. Pengeditan online belum disambungkan ke database.</p><div class="grid" id="seller-products"></div><script>renderProducts('seller-products')</script></main><footer class="shell footer">MauKue · Kue custom sesukamu</footer></body></html>
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kelola produk | MauKue Seller</title>
+  <meta name="description" content="Kelola katalog produk kue MauKue.">
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/seller.css">
+</head>
+<body data-page="seller-products" data-root=".." class="seller-body">
+  <div class="seller-layout">
+    <aside id="seller-sidebar" class="seller-sidebar"></aside>
+    <div class="seller-main">
+      <header id="seller-topbar" class="seller-topbar"></header>
+      <main class="seller-content">
+        <div class="dash-page-head">
+          <div><span class="eyebrow">Katalog toko</span><h1>Kelola produk</h1><p>Perubahan di sini langsung muncul di katalog pembeli pada browser yang sama.</p></div>
+          <a class="btn" href="add-product.html">＋ Tambah produk</a>
+        </div>
+
+        <div class="toolbar seller-toolbar">
+          <div class="search-field"><span aria-hidden="true">⌕</span><input id="product-search" type="search" placeholder="Cari nama atau kategori produk..." aria-label="Cari produk"></div>
+          <label class="sort-field">Kategori
+            <select id="product-category"></select>
+          </label>
+        </div>
+
+        <section class="panel panel-table">
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead><tr><th>Produk</th><th>Harga</th><th>Ketersediaan</th><th>Tag</th><th>Aksi</th></tr></thead>
+              <tbody id="seller-products-body"></tbody>
+            </table>
+          </div>
+          <div class="empty-inline" id="products-empty" hidden>Tidak ada produk yang cocok dengan pencarian.</div>
+        </section>
+      </main>
+      <footer class="seller-footer"><span>MauKue Seller Studio</span><span>Data demo tersimpan di browser</span></footer>
+    </div>
+  </div>
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/products.js"></script>
+  <script src="../js/database.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/orders.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/seller.js"></script>
+</body>
+</html>

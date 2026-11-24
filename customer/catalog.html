@@ -1,1 +1,59 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Katalog Kue | MauKue</title><link rel="stylesheet" href="../css/style.css"><script src="../js/products.js"></script><script src="../js/app.js"></script></head><body><header class="top"><a class="brand" href="../index.html">mau<span>kue</span></a><nav class="nav"><a href="../customer/dashboard.html">Beranda</a><a href="../customer/catalog.html">Katalog</a><a href="../customer/custom-order.html">Pesan custom</a><a href="../customer/orders.html">Pesanan</a><a href="../seller/dashboard.html">Area penjual</a></nav><a class="btn" href="../customer/cart.html">Keranjang</a></header><main class="shell page"><div class="section-title"><div><div class="eyebrow">Temukan favoritmu</div><h1>Katalog Kue</h1></div></div><input class="search" id="search" placeholder="Cari nama kue..." oninput="filterCatalog(this.value)"><div class="grid" id="catalog" style="margin-top:20px"></div><script>renderProducts('catalog');function filterCatalog(q){document.getElementById('catalog').innerHTML=products.filter(p=>p.name.toLowerCase().includes(q.toLowerCase())||p.category.toLowerCase().includes(q.toLowerCase())).map(link).join('')}</script></main><footer class="shell footer">MauKue · Kue custom sesukamu</footer></body></html>
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Katalog kue | MauKue</title>
+  <meta name="description" content="Jelajahi katalog kue MauKue: birthday cake, doodle cake, brownies, dan dessert box.">
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/customer.css">
+</head>
+<body data-page="customer-catalog" data-root="..">
+  <header id="site-header" class="site-header"></header>
+
+  <main class="page-shell">
+    <div class="shell">
+      <div class="page-head">
+        <div>
+          <span class="eyebrow">Semua yang manis</span>
+          <h1>Katalog kue</h1>
+          <p>Pilih yang kamu suka, lalu sesuaikan ukuran dan rasanya di halaman detail. Semua kue bisa dijadikan dasar pesanan custom.</p>
+        </div>
+        <a class="btn btn-secondary" href="custom-order.html">Pesan custom</a>
+      </div>
+
+      <div class="catalog-toolbar">
+        <div class="search-field">
+          <span aria-hidden="true">⌕</span>
+          <input id="catalog-search" type="search" placeholder="Cari nama kue, kategori, atau rasa..." aria-label="Cari kue">
+        </div>
+        <div class="toolbar-side">
+          <span class="result-count" id="catalog-count">8 kue ditemukan</span>
+          <label class="sort-field">Urutkan
+            <select id="catalog-sort">
+              <option value="recommended">Rekomendasi</option>
+              <option value="newest">Terbaru</option>
+              <option value="price-asc">Harga terendah</option>
+              <option value="price-desc">Harga tertinggi</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="category-row catalog-chips" id="catalog-chips"></div>
+      <div class="product-grid" id="catalog-grid" style="margin-top:26px"></div>
+    </div>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/products.js"></script>
+  <script src="../js/database.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/orders.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/customer.js"></script>
+</body>
+</html>

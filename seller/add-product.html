@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tambah produk | MauKue Seller</title>
+  <meta name="description" content="Tambah atau edit produk kue MauKue.">
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/seller.css">
+</head>
+<body data-page="seller-add-product" data-root=".." class="seller-body">
+  <div class="seller-layout">
+    <aside id="seller-sidebar" class="seller-sidebar"></aside>
+    <div class="seller-main">
+      <header id="seller-topbar" class="seller-topbar"></header>
+      <main class="seller-content">
+        <div class="dash-page-head">
+          <div><a class="back-link" href="products.html">← Kembali ke produk</a><h1 id="product-form-title">Tambah produk baru</h1><p>Isi detail kue dan unggah foto asli. Foto akan disimpan di browser untuk MVP ini.</p></div>
+        </div>
+
+        <form id="product-form" class="product-form-layout" novalidate>
+          <section class="panel form-section">
+            <div class="panel-head"><h2>Informasi produk</h2><span>01</span></div>
+            <div class="field">
+              <label for="product-name">Nama produk</label>
+              <input id="product-name" name="name" required placeholder="Contoh: Rainbow Palette Cake">
+            </div>
+            <div class="form-grid">
+              <div class="field">
+                <label for="product-category-input">Kategori</label>
+                <select id="product-category-input" name="category" required></select>
+              </div>
+              <div class="field">
+                <label for="product-price">Harga dasar (Rp)</label>
+                <input id="product-price" name="price" type="number" min="1000" step="1000" required placeholder="85000">
+              </div>
+            </div>
+            <div class="field">
+              <label for="product-desc">Deskripsi</label>
+              <textarea id="product-desc" name="desc" rows="4" required placeholder="Ceritakan rasa, tekstur, dan dekorasi kue..."></textarea>
+            </div>
+            <div class="field">
+              <label for="product-tag">Tag singkat <span class="optional">(opsional)</span></label>
+              <input id="product-tag" name="tag" placeholder="Contoh: Foto asli, Isi 6 pcs, Best seller">
+            </div>
+            <label class="check-field"><input id="product-available" type="checkbox" checked> Produk tersedia di katalog</label>
+          </section>
+
+          <section class="panel form-section">
+            <div class="panel-head"><h2>Varian &amp; foto</h2><span>02</span></div>
+            <div class="form-grid">
+              <div class="field">
+                <label for="product-sizes">Pilihan ukuran</label>
+                <input id="product-sizes" name="sizes" placeholder="Mini (12 cm), Regular (16 cm), Jumbo (20 cm)">
+                <small class="field-hint">Pisahkan dengan koma. Ukuran Jumbo otomatis +Rp35.000, Regular +Rp15.000.</small>
+              </div>
+              <div class="field">
+                <label for="product-flavors">Pilihan rasa</label>
+                <input id="product-flavors" name="flavors" placeholder="Vanilla, Cokelat, Red Velvet, Matcha">
+                <small class="field-hint">Pisahkan dengan koma.</small>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Foto produk</label>
+              <input id="product-image-file" type="file" accept="image/jpeg,image/png,image/webp" hidden>
+              <label class="upload-box" for="product-image-file"><span class="upload-icon">＋</span><strong>Pilih foto produk</strong><small>JPG, PNG, WebP · maksimal 3 MB</small></label>
+              <img id="product-image-preview" class="product-form-preview" alt="Preview foto produk" hidden>
+            </div>
+            <div class="field">
+              <label for="product-image-url">Atau tempel URL foto <span class="optional">(opsional)</span></label>
+              <input id="product-image-url" type="url" placeholder="https://...">
+              <small class="field-hint">Gunakan URL gambar yang boleh dipakai publik. Foto lama tetap dipakai jika tidak diganti.</small>
+            </div>
+
+            <div class="form-error" id="product-form-error" role="alert"></div>
+            <div class="form-actions">
+              <a class="btn btn-ghost" href="products.html">Batal</a>
+              <button class="btn" type="submit">Simpan produk</button>
+            </div>
+          </section>
+        </form>
+      </main>
+      <footer class="seller-footer"><span>MauKue Seller Studio</span><span>Data demo tersimpan di browser</span></footer>
+    </div>
+  </div>
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/products.js"></script>
+  <script src="../js/database.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/orders.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/seller.js"></script>
+</body>
+</html>

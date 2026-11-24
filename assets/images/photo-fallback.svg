@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Foto produk belum tersedia">
+  <rect width="800" height="600" fill="#fff4dd"/>
+  <circle cx="140" cy="110" r="52" fill="#ffe9a8"/>
+  <circle cx="690" cy="480" r="80" fill="#e4f4f8"/>
+  <g transform="translate(400 300)" fill="none" stroke="#b9895a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-125 90h250v-75H-125z"/>
+    <path d="M-150 15h300c0-42-29-60-65-60H-85c-36 0-65 18-65 60Z"/>
+    <path d="M-90 15v-52M-45 15v-52M0 15v-52M45 15v-52M90 15v-52"/>
+    <path d="M-40-45c-12-18 12-28 0-46M20-45c-12-18 12-28 0-46"/>
+    <path d="M-125 90c0 24 20 40 45 40h160c25 0 45-16 45-40"/>
+  </g>
+  <text x="400" y="510" text-anchor="middle" fill="#8c746b" font-family="Georgia, serif" font-size="30">Foto produk belum tersedia</text>
+  <text x="400" y="548" text-anchor="middle" fill="#a58c80" font-family="Arial, sans-serif" font-size="18">MauKue</text>
+</svg>
